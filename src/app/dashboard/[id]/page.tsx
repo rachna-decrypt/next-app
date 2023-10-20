@@ -6,7 +6,7 @@ const DetailPage = () => {
   const params = useParams();
  
 
-  return <div>DetailPage of {params.id}</div>;
+  return <div>DetailPage of {params.id} </div>;
 };
 
 export default DetailPage;

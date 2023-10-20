@@ -20,3 +20,8 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: error.message });
   }
 }
+
+export async function ANOTHERGET(request: NextRequest) {
+const reqBody = await request.json();
+console.log("reqBody", reqBody);
+}
