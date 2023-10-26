@@ -21,7 +21,4 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function ANOTHERGET(request: NextRequest) {
-const reqBody = await request.json();
-console.log("reqBody", reqBody);
-}
+
