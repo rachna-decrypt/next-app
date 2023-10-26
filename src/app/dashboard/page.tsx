@@ -7,14 +7,21 @@ import { toast } from "sonner";
 
 const Dashboard = () => {
   const router = useRouter();
-  const [loading, setLoading] = React.useState(false);
-  const [data, setData] = React.useState<any>("");
+  const [loading, setLoading] =
+    React.useState(false);
+  const [data, setData] =
+    React.useState<any>("");
   const onLogout = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("/api/users/logout");
+      const response = await axios.get(
+        "/api/users/logout",
+      );
       toast.success("Logout Success");
-      console.log("response: ", response);
+      console.log(
+        "response: ",
+        response,
+      );
       router.push("/login");
     } catch (error: any) {
       toast.error(error.message);
@@ -23,11 +30,18 @@ const Dashboard = () => {
     }
   };
 
-  const getProfile = async (e: { preventDefault: () => void }) => {
+  const getProfile = async (e: {
+    preventDefault: () => void;
+  }) => {
     e.preventDefault();
     try {
-      const response = await axios.get("/api/users/profile");
-      console.log("response: ", response.data.data);
+      const response = await axios.get(
+        "/api/users/profile",
+      );
+      console.log(
+        "response: ",
+        response.data.data,
+      );
       setData(response.data.data);
     } catch (error: any) {
       toast.error(error.message);
@@ -39,13 +53,25 @@ const Dashboard = () => {
       {!data ? (
         "Nothing profile to show"
       ) : (
-        <Link href={`/dashboard/${data._id}`}>{data._id}</Link>
+        <Link
+          href={`/dashboard/${data._id}`}
+        >
+          {data._id}
+        </Link>
       )}
 
-      <button className="p-4 bg-green-600 text-white my-5" onClick={onLogout}>
-        {loading ? "Logging out..." : "Logout"}
+      <button
+        className="p-4 bg-green-600 text-white my-5"
+        onClick={onLogout}
+      >
+        {loading
+          ? "Logging out..."
+          : "Logout"}
       </button>
-      <button className="p-4 bg-blue-500 text-white my-5" onClick={getProfile}>
+      <button
+        className="p-4 bg-blue-500 text-white my-5"
+        onClick={getProfile}
+      >
         Get Profile
       </button>
     </div>
