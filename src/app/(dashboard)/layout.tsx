@@ -6,7 +6,7 @@ const AuthLayout = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="bg-cyan-800 h-full">
+    <div className="bg-cyan-500 h-full">
       <h1 className="text-4xl text-green-300">
         Dashboard Header
       </h1>

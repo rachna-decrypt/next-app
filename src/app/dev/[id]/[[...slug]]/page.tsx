@@ -1,9 +1,23 @@
-import React from 'react'
 
-const Slug = () => {
+const Slug = async () => {
+  const prods = await getProducts();
   return (
-    <div>Slug</div>
-  )
-}
+    <div>
+      <ul>
+        {prods.map((p: any) => {
+          return <li>{p.title}</li>;
+        })}
+      </ul>
+    </div>
+  );
+};
 
-export default Slug
+const getProducts = async () => {
+  const response = await fetch(
+    "https://dummyjson.com/products",
+  );
+  const product = await response.json();
+  return product.products;
+};
+
+export default Slug;

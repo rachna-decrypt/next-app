@@ -1,8 +1,13 @@
-import React from 'react'
+import ComponentBtn from "./ComponentBtn"
 
 const Dashboard1 = () => {
+  
+     
   return (
-    <div>Dashboard1</div>
+    <div>
+      <ComponentBtn label="click"/>
+    
+    </div>
   )
 }
 

@@ -47,6 +47,7 @@ const Dashboard = () => {
       toast.error(error.message);
     }
   };
+  
   return (
     <div className="flex flex-grow justify-center items-center m-96 flex-col">
       <h1>Dashboard</h1>
